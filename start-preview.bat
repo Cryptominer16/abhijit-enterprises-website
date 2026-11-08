@@ -10,3 +10,4 @@ echo.
 echo Website opened! You can close this window at any time.
 echo.
 pause
+

@@ -58,3 +58,4 @@ ErrorDocument 404 /404.html
 
 # 6. Character Encoding
 AddDefaultCharset UTF-8
+

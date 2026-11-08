@@ -1,0 +1,34 @@
+name: Deploy to GoDaddy cPanel
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy-cpanel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync Files to GoDaddy public_html
+        if: ${{ secrets.FTP_SERVER != '' && secrets.FTP_USERNAME != '' && secrets.FTP_PASSWORD != '' }}
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github*/**
+            **/README.md
+            **/GODADDY_CPANEL_DEPLOYMENT.md
+            **/OWNER_CONFIRMATION_CHECKLIST.md
+            **/WEBSITE_EDITING_GUIDE.md
+            **/start-preview.bat
+            **/*.md
