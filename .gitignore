@@ -1,0 +1,13 @@
+# OS generated files
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Editor directories
+.vscode/
+.idea/
+
+# Local logs and temporary files
+*.log
+scratch/

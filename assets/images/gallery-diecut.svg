@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgDC" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bgDC)"/>
+  
+  <!-- Custom Cut Stickers & Labels -->
+  <!-- Star shape die-cut -->
+  <polygon points="220,120 245,180 310,185 260,225 275,290 220,255 165,290 180,225 130,185 195,180" fill="#f59e0b" stroke="#d97706" stroke-width="3" stroke-dasharray="6 4"/>
+  <text x="220" y="215" font-family="'Poppins', sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">CUSTOM DIE-CUT</text>
+
+  <!-- Hexagonal Product Label -->
+  <polygon points="560,110 650,160 650,260 560,310 470,260 470,160" fill="#0f2b48" stroke="#38bdf8" stroke-width="4"/>
+  <circle cx="560" cy="210" r="50" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="560" y="205" font-family="'Poppins', sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">ORGANIC HONEY</text>
+  <text x="560" y="225" font-family="'Poppins', sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">SPECIAL CUTOUT</text>
+
+  <!-- Circular Decals -->
+  <circle cx="260" cy="400" r="70" fill="#0284c7" stroke="#0369a1" stroke-width="3"/>
+  <text x="260" y="405" font-family="'Poppins', sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">PREMIUM VINYL</text>
+
+  <!-- Barcode / Bottle Shape -->
+  <rect x="480" y="340" width="160" height="120" rx="20" fill="#10b981" stroke="#059669" stroke-width="3"/>
+  <text x="560" y="405" font-family="'Poppins', sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">WATERPROOF LABEL</text>
+
+  <text x="400" y="520" font-family="'Poppins', sans-serif" font-size="24" font-weight="700" fill="#0f2b48" text-anchor="middle">
+    Precision Digital Die-Cutting &amp; Stickers
+  </text>
+  <text x="400" y="555" font-family="'Poppins', sans-serif" font-size="16" fill="#64748b" text-anchor="middle">
+    Short-Run Custom Shapes &amp; Decals for Local Businesses
+  </text>
+</svg>
+
