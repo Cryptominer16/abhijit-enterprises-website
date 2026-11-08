@@ -1,9 +1,12 @@
-name: Deploy to GoDaddy cPanel
+name: Deploy to GoDaddy cPanel (FTP)
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ main ]
+    inputs:
+      sync_mode:
+        description: 'Sync files to public_html'
+        required: true
+        default: 'sync'
 
 jobs:
   deploy-cpanel:
@@ -15,7 +18,6 @@ jobs:
           fetch-depth: 0
 
       - name: Sync Files to GoDaddy public_html
-        if: ${{ secrets.FTP_SERVER != '' && secrets.FTP_USERNAME != '' && secrets.FTP_PASSWORD != '' }}
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
