@@ -3,59 +3,37 @@
 # Website: https://www.abhijitenterprises.in
 # ==============================================================================
 
-# 1. Force HTTPS and canonical www redirect
+# 1. Force HTTPS redirect
 <IfModule mod_rewrite.c>
   RewriteEngine On
-
-  # Redirect HTTP to HTTPS
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-  # Optional: Ensure www prefix (uncomment if preferred)
-  # RewriteCond %{HTTP_HOST} ^abhijitenterprises\.in [NC]
-  # RewriteRule ^(.*)$ https://www.abhijitenterprises.in/$1 [L,R=301]
 </IfModule>
 
-# 2. Custom Error Page
-ErrorDocument 404 /404.html
-
-# 3. GZIP / Deflate Compression for Speed
+# 2. GZIP / Deflate Compression for Speed
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
   AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
-  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE image/svg+xml image/png image/jpeg
 </IfModule>
 
-# 4. Browser Caching (Leverage Browser Cache for static assets)
+# 3. Browser Caching
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault "access plus 1 month"
-
-  # HTML documents (1 hour for quick updates)
   ExpiresByType text/html "access plus 1 hour"
-
-  # CSS and JavaScript (1 week)
   ExpiresByType text/css "access plus 1 week"
   ExpiresByType application/javascript "access plus 1 week"
-
-  # Media & Images (1 month)
-  ExpiresByType image/svg+xml "access plus 1 month"
-  ExpiresByType image/jpeg "access plus 1 month"
   ExpiresByType image/png "access plus 1 month"
-  ExpiresByType image/webp "access plus 1 month"
-  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 month"
 </IfModule>
 
-# 5. Security Headers
+# 4. Security Headers
 <IfModule mod_headers.c>
-  # Prevent MIME type sniffing
   Header set X-Content-Type-Options "nosniff"
-  # Prevent clickjacking
   Header set X-Frame-Options "SAMEORIGIN"
-  # Control referrer policy
   Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 
-# 6. Character Encoding
+# 5. Character Encoding
 AddDefaultCharset UTF-8
-

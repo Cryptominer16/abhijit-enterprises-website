@@ -17,9 +17,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # -------------------------------------------------------------
-  # Job 1: Lint, Validate HTML & Check Assets
-  # -------------------------------------------------------------
   validate:
     runs-on: ubuntu-latest
     steps:
@@ -33,8 +30,7 @@ jobs:
 
       - name: Verify JavaScript Syntax
         run: |
-          node -c assets/js/i18n.js
-          node -c assets/js/main.js
+          node -c script.js
           echo "JavaScript syntax valid."
 
       - name: Verify Internal Links & Assets
@@ -65,9 +61,6 @@ jobs:
             console.log('All ' + files.length + ' HTML files and assets verified successfully.');
           "
 
-  # -------------------------------------------------------------
-  # Job 2: Deploy to GitHub Pages (Live Instant Preview)
-  # -------------------------------------------------------------
   deploy-pages:
     needs: validate
     if: github.ref == 'refs/heads/main'
